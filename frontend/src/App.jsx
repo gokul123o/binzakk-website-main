@@ -11,7 +11,10 @@ import {
 
 const WHATSAPP_NUMBER = "7012423204"; // Temporary fallback number
 const API_BASE_URL = (
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD
+    ? "https://gokul123o.pythonanywhere.com"
+    : "http://127.0.0.1:8001")
 ).replace(/\/$/, "");
 const PACKAGES_API_URL = `${API_BASE_URL}/api/packages`;
 
